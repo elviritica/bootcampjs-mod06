@@ -1,5 +1,5 @@
-# Juego de las 7 y media (Lab. Condicionales)
-
+# Juego de las 7 y media (Lab. Imports)
+Refactorización de proyecto
 
 ### Pasos:
 
