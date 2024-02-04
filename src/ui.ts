@@ -116,6 +116,11 @@ export function mePlanto(puntuacionUsuario : number){
     habilitarBoton(botonRevelar);
 }
 
+export function nuevaPartidaUI(){
+    nuevaPartidaMotor();
+    elementoMsj.innerHTML = "";
+}
+
 export function handleClickCarta(){
     let carta = dameCarta();
     muestraCarta(carta);
@@ -132,8 +137,7 @@ export function handleClickPlanto(){
 }
 
 export function handleClickReiniciar(){
-    nuevaPartidaMotor();
-    elementoMsj.innerHTML = "";
+    nuevaPartidaUI();    
 }
 
 export function handleClickRevelarCarta(){

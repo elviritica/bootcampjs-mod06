@@ -1,8 +1,7 @@
-import { nuevaPartidaMotor} from "./motor";
-import { botonMePlanto, botonPedir, botonReiniciar, botonRevelar, handleClickCarta, handleClickPlanto, handleClickReiniciar, handleClickRevelarCarta } from "./ui";
+import { botonMePlanto, botonPedir, botonReiniciar, botonRevelar, handleClickCarta, handleClickPlanto, handleClickReiniciar, handleClickRevelarCarta, nuevaPartidaUI } from "./ui";
 
 document.addEventListener("DOMContentLoaded", ()=> {
-    nuevaPartidaMotor();
+    nuevaPartidaUI();
 });
 
 if(botonPedir && botonPedir instanceof HTMLButtonElement){
