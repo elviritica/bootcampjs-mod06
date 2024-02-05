@@ -1,5 +1,5 @@
 import {  AS, DOS, TRES, CUATRO, CINCO, SEIS, SIETE, SOTA, CABALLO, REY, partida } from "./modelo";
-import {  dameCarta, deshabilitarBoton, habilitarBoton, muestraPuntuacion, sumarCartas, nuevaPartidaMotor} from "./motor";
+import {  dameCarta, sumarCartas, nuevaPartidaMotor} from "./motor";
 
 export const botonPedir = document.getElementById("dameCarta") as HTMLButtonElement;
 export const botonMePlanto = document.getElementById("mePlanto")  as HTMLButtonElement;
@@ -119,6 +119,11 @@ export function mePlanto(puntuacionUsuario : number){
 export function nuevaPartidaUI(){
     nuevaPartidaMotor();
     elementoMsj.innerHTML = "";
+    muestraPuntuacion();
+    deshabilitarBoton(botonReiniciar);
+    deshabilitarBoton(botonRevelar);
+    habilitarBoton(botonPedir);
+    habilitarBoton(botonMePlanto);
 }
 
 export function handleClickCarta(){
@@ -154,4 +159,23 @@ export function handleClickRevelarCarta(){
         elementoMsj.innerHTML = `Si no te hubieses plantado habrías conseguido una puntuación de ${partida.puntuacionUsuario}`;
     }
 
+}
+
+export function muestraPuntuacion () {
+    const puntuacion = document.getElementById("puntuacion");
+    if (puntuacion && puntuacion instanceof HTMLDivElement) {
+        puntuacion.innerHTML = partida.puntuacionUsuario.toString();
+    } 
+}
+
+export function deshabilitarBoton(boton : HTMLButtonElement){
+    if (boton && boton instanceof HTMLButtonElement) {
+        boton.disabled = true;
+    }
+}
+
+export function habilitarBoton(boton : HTMLButtonElement){
+    if (boton && boton instanceof HTMLButtonElement) {
+        boton.disabled = false;
+    }
 }

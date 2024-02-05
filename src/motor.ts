@@ -1,25 +1,5 @@
 import { partida,  } from "./modelo";
-import { botonMePlanto, botonPedir, botonReiniciar, botonRevelar,  } from "./ui";
 
-
-export function muestraPuntuacion () {
-    const puntuacion = document.getElementById("puntuacion");
-    if (puntuacion && puntuacion instanceof HTMLDivElement) {
-        puntuacion.innerHTML = partida.puntuacionUsuario.toString();
-    } 
-}
-
-export function deshabilitarBoton(boton : HTMLButtonElement){
-    if (boton && boton instanceof HTMLButtonElement) {
-        boton.disabled = true;
-    }
-}
-
-export function habilitarBoton(boton : HTMLButtonElement){
-    if (boton && boton instanceof HTMLButtonElement) {
-        boton.disabled = false;
-    }
-}
 
 export function generarNumRandom (min : number, max : number) : number{
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -50,9 +30,5 @@ export function sumarCartas(carta:number, puntuacionUsuario: number){
 export function nuevaPartidaMotor(){
     partida.numIntentos = 0;
     partida.puntuacionUsuario = 0;
-    muestraPuntuacion();
-    deshabilitarBoton(botonReiniciar);
-    deshabilitarBoton(botonRevelar);
-    habilitarBoton(botonPedir);
-    habilitarBoton(botonMePlanto);
+
 }
